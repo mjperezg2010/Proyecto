@@ -41,7 +41,8 @@ class Buffer:
         fileObject.seek(0)
         dataLine = fileObject.read()
         _cont = 0
-        for j in range (0,int(len(dataLine)/self.regSize)):            
+        #for j in range (0,int(len(dataLine)/self.regSize)):            
+        for j in range (0,2):
             dataBlock = dataLine[_cont*self.getRegSize():_cont*self.getRegSize()+self.getRegSize()]            
             _cont += 1            
             indexFlag = 0
@@ -50,8 +51,7 @@ class Buffer:
             for i in range (0,self.numAtributes):
                 atributes[cont] = dataBlock[indexFlag:indexFlag+self.listAtributesSize[cont]]
                 indexFlag = indexFlag+self.listAtributesSize[cont]
-                atributes[cont] = str(atributes[cont]).rstrip()                            
-                print("|"+atributes[cont]+"|")
+                atributes[cont] = str(atributes[cont]).rstrip()                                            
                 cont += 1           
             if self.objectIndicator == 0:            
                 self.objectList.append(Personaje.Personaje(atributes[0],atributes[1],atributes[2],atributes[3]))

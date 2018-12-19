@@ -1,4 +1,7 @@
 import Personaje
+import Item
+import Bitacora
+import PartidaGuardada
 
 class Buffer:
     def __init__(self,file,objectIndicator):

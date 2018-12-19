@@ -36,13 +36,14 @@ class Buffer:
     def readEverything(self,file):
         fileObject = file.getFile()
         fileObject.seek(0)
-        dataLines = fileObject.readLines()
+        dataLine = fileObject.read
         for j in range (0,len(dataLines)):
             cont = 0
+            dataBlock = dataLine[cont*self.getRegSize():cont*self.getRegSize()+self.getRegSize()]            
             indexFlag = 0
             atributes = [0,0,0,0,0,0,0,0,0]
             for i in range (0,self.numAtributes):
-                atributes[cont] = dataLine[indexFlag:indexFlag+self.listAtributesSize[cont]]
+                atributes[cont] = dataBlock[indexFlag:indexFlag+self.listAtributesSize[cont]]
                 indexFlag = indexFlag+self.listAtributesSize[cont]
                 cont += 1
                 atributes[cont] = str(atributes[cont]).rstrip()            

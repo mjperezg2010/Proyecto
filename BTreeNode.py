@@ -27,9 +27,11 @@ class BTreeNode:
 
     def sortKeyList(self):        
         tempList = [None,None,None]
+        cont = 0
         for i in range (0,3):
             if self.keyList[i] is not None:
-                tempList[i] = self.keyList[i]
+                tempList[cont] = self.keyList[i]
+                cont += 1
         
         for j in range (0,3):
             self.keyList[j] = tempList[j]

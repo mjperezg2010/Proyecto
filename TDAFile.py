@@ -109,11 +109,12 @@ class TDAFile:
 
     def getFreeSpace(self):
         self.availListFile = open(self.ALfileName,'r')
-        data = self.availListFile.read().split(",")
+        data = self.availListFile.read()
+		dataList = data.split(",")
         self.availListFile.close()
-		print(data)
+		print(dataList[0])
         if len(data) != 0:
-            return float(data[0])
+            return dataList[0]
         else:
             return -1
 

@@ -118,7 +118,7 @@ class TDAFile:
             self.file.seek(pointerPosition)
             buffer.write(self.file)
             toInsertKey = buffer.getActualObjectKey()
-            self.appendIndexFileInfo(toInsertKey+","+pointerPosition)
+            self.appendIndexFileInfo(toInsertKey+","+str(pointerPosition))
         if self.root is None:            
             newKey = BTreeKey.BTreeKey(toInsertKey,0,None,None,self.root)
             self.root = BTreeNode.BTreeNode(True,True,None,newKey)            

@@ -1,0 +1,75 @@
+Monstruo
+String nombre,damage,defense
+Ataque Especial()
+Ataque()
+
+Cazador
+String nombre
+Equipo equipo
+Arma arma
+int pociones, trampas
+
+Equipo
+String nombre
+int defensa
+StringLista lista
+
+Arma
+String nombre
+int damage
+String tipo
+void ataqueEspecialEspada()
+void ataqueEspecialArco()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----Maestro
+Monstruos de las misiones chequq
+Items cheque
+
+----Transaccionales
+Registro partidas guardadas ---cheque
+#Libro de plantas - Encuentra una de manera aleatoria y la registra en el libro , puede modificar estas plantas
+Bitacora -- 
+Inventario Jugador (Registro de itemaS) cuyo nombre el nombre de la partida
+Archivo Inventario - Partida
+
+
+
+
+
+
+
+new game-- nuevo inventario osea nuevo archivo 
+
+Se tendra otro archivo que tendra el nombre del inventario - junto con el nombre de la partida guardada
+
+
+
+
+
+
+
+
+Para obtener armaduras -- al matar monstruo, saca aleatoriamente partes ------ tambien plantas
+despuesd de comprar el inventario se modifica, elimina 

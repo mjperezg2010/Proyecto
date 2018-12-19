@@ -1,0 +1,4 @@
+Personaje,4,15,5,5,5,30
+PartidaGuardada,3,15,1,1,18
+Bitacora,5,15,10,10,10,10,60
+Item,3,15,15,5,35

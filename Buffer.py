@@ -47,6 +47,7 @@ class Buffer:
             j += self.getRegSize()
             indexFlag = 0
             atributes = [0,0,0,0,0,0,0,0,0]
+            cont = 0
             for i in range (0,self.numAtributes):
                 atributes[cont] = dataBlock[indexFlag:indexFlag+self.listAtributesSize[cont]]
                 indexFlag = indexFlag+self.listAtributesSize[cont]

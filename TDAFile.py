@@ -244,6 +244,9 @@ class TDAFile:
             self.file.seek(toRemove)
             buffer.erase(self.file)
 
+    #def shrink(self):
+
+
     def getFreeSpace(self):
         self.availListFile = open(self.ALfileName,'r')
         data = self.availListFile.read()

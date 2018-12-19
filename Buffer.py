@@ -41,8 +41,9 @@ class Buffer:
         fileObject.seek(0)
         dataLine = fileObject.read()
         for j in range (0,len(dataLine)):
-            cont = 0
-            dataBlock = dataLine[cont*self.getRegSize():cont*self.getRegSize()+self.getRegSize()]            
+            _cont = 0
+            dataBlock = dataLine[cont*self.getRegSize():_cont*self.getRegSize()+self.getRegSize()]            
+            _cont += 1
             j += self.getRegSize()
             indexFlag = 0
             atributes = [0,0,0,0,0,0,0,0,0]

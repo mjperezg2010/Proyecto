@@ -112,7 +112,7 @@ class TDAFile:
         data = self.availListFile.read().split(",")
         self.availListFile.close()
         if len(data) != 0:
-            return int(data[0])
+            return float(data[0])
         else:
             return -1
 

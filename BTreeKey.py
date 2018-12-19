@@ -11,6 +11,9 @@ class BTreeKey:
 
     def getOwnNode(self):
         return self.ownNode
+    
+    def setOwnNode(self,node):
+        self.ownNode = node
 
     def getRightSon(self):
         return self.rightSon

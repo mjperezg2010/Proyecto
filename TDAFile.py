@@ -121,7 +121,10 @@ class TDAFile:
             self.appendIndexFileInfo(toInsertKey+","+str(pointerPosition))
         if self.root is None:            
             newKey = BTreeKey.BTreeKey(toInsertKey,0,None,None,self.root)
-            self.root = BTreeNode.BTreeNode(True,True,None,newKey)            
+            self.root = BTreeNode.BTreeNode(True,True,None,newKey)
+            for i in range (0,3):
+                if self.root.getKey(i) is not None:
+                    self.root.getKey(i).setOwnNode(self.root)
         else:            
             actualNode = self.root
             if actualNode.isLeaf and actualNode.getNumKeys() < 2:

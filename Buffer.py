@@ -51,8 +51,8 @@ class Buffer:
             for i in range (0,self.numAtributes):
                 atributes[cont] = dataBlock[indexFlag:indexFlag+self.listAtributesSize[cont]]
                 indexFlag = indexFlag+self.listAtributesSize[cont]
-                cont += 1
                 atributes[cont] = str(atributes[cont]).rstrip()            
+                cont += 1                
             if self.objectIndicator == 0:            
                 self.objectList.append(Personaje.Personaje(atributes[0],atributes[1],atributes[2],atributes[3]))
             elif self.objectIndicator == 1:
@@ -71,8 +71,8 @@ class Buffer:
         for i in range (0,self.numAtributes):
             atributes[cont] = dataLine[indexFlag:indexFlag+self.listAtributesSize[cont]]
             indexFlag = indexFlag+self.listAtributesSize[cont]
-            cont += 1
-            atributes[cont] = str(atributes[cont]).rstrip()            
+            atributes[cont] = str(atributes[cont]).rstrip()
+            cont += 1            
         if self.objectIndicator == 0:            
             self.actualObject = Personaje.Personaje(atributes[0],atributes[1],atributes[2],atributes[3])
         elif self.objectIndicator == 1:

@@ -218,7 +218,7 @@ class TDAFile:
         return None
                         
     def deleteReg(self,buffer):
-        toRemove = find(buffer)[0]
+        toRemove = find(buffer)[0]	
         if toRemove != -1:
             #self.indexFile = open(self.INFfileName,'a+')
             #aux = self.indexFile.read().split(";")            
@@ -234,7 +234,7 @@ class TDAFile:
 
             self.availListFile = open(self.ALfileName,'a+')
             self.availListFile.seek(self.fileSize(availListFile))
-            self.availListFile.write(buffer.getFilePosition+",")
+            self.availListFile.write(toRemove+",")
             self.availListFile.close()
             self.file.seek(toRemove)
             buffer.erase(self.file)

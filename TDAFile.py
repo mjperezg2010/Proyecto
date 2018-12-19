@@ -230,12 +230,12 @@ class TDAFile:
             self.file.seek(toRemove)
             buffer.erase(self.file)
 
-        def getFreeSpace(self):
-            self.availListFile = open(self.ALfileName,'r')
-            data = self.availListFile.read()
-            dataList = data.split(",")
-            self.availListFile.close()		
-            if len(data) != 0:
-                return dataList[0]
-            else:
-                return -1
+    def getFreeSpace(self):
+        self.availListFile = open(self.ALfileName,'r')
+        data = self.availListFile.read()
+        dataList = data.split(",")
+        self.availListFile.close()		
+        if len(data) != 0:
+            return dataList[0]
+        else:
+            return -1

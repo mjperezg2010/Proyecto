@@ -36,7 +36,7 @@ class Buffer:
     def readEverything(self,file):
         fileObject = file.getFile()
         fileObject.seek(0)
-        dataLine = fileObject.read
+        dataLine = fileObject.read()
         for j in range (0,len(dataLine)):
             cont = 0
             dataBlock = dataLine[cont*self.getRegSize():cont*self.getRegSize()+self.getRegSize()]            

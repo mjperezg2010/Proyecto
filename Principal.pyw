@@ -833,6 +833,7 @@ def guardarArchivo():
 	TDAFilePartida.closeFile()
 
 
+	
 	#Bitacora
 	TDAFileBitacora=TDAFile("Bitacora.txt")
 	TDAFileBitacora.openFile()
@@ -841,9 +842,17 @@ def guardarArchivo():
 
 	bufferBitacora=Buffer("MetadataFile",2)
 	bufferBitacora.setActualObject(bitacora)
+	TDAFileBitacora.insert(bufferBitacora)
 
+	TDAFileBitacora.close()
+
+
+	#Inventario
+	TDAFileInventario=TDAFile(hunter.getNombre()+"txt")
+	TDAFileInventario.openFile()
+
+	
 	#Que si ya existe update
-
 
 
 

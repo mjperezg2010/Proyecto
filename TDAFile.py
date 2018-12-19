@@ -111,6 +111,7 @@ class TDAFile:
         self.availListFile = open(self.ALfileName,'r')
         data = self.availListFile.read().split(",")
         self.availListFile.close()
+		print(data)
         if len(data) != 0:
             return float(data[0])
         else:

@@ -108,6 +108,9 @@ class TDAFile:
         return len(string)
     
     def insert(self,buffer):
+        if self.find(buffer) is None:
+            return 0
+
         pointerPosition = self.getFreeSpace()
         if pointerPosition != -1:
             self.file.seek(pointerPosition)    
@@ -157,7 +160,8 @@ class TDAFile:
                     actualNode.addKey(BTreeKey.BTreeKey(buffer.getActualObjectKey(),pointerPosition,None,None,actualNode))
                 else:
                     self.seekNode(actualNode,toInsertKey,pointerPosition)
-    
+        return 1
+
     def seekNode(self,node,key,pointerPosition):        
         if node.getNumKeys() == 2:            
             newKey = BTreeKey.BTreeKey(key,pointerPosition,None,None,node)

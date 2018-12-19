@@ -160,8 +160,13 @@ class TDAFile:
             newKey = BTreeKey.BTreeKey(key,pointerPosition,None,None,node)
             node.addKey(newKey)
             toPromoveKey = node.getKey(1)
-            toPromoveKey.setLeftSon(BTreeNode.BTreeNode(False,node.getKey(0).atLeaf(),node,node.getKey(0)))
-            toPromoveKey.setRightSon(BTreeNode.BTreeNode(False,node.getKey(2).atLeaf(),node,node.getKey(2)))
+            if node.getFather() is not None:
+                toPromoveKey.setLeftSon(BTreeNode.BTreeNode(False,node.getKey(0).atLeaf(),node.getFather().getFather(),node.getKey(0)))
+                toPromoveKey.setRightSon(BTreeNode.BTreeNode(False,node.getKey(2).atLeaf(),node.getFather().getFather(),node.getKey(2)))
+            else:
+                toPromoveKey.setLeftSon(BTreeNode.BTreeNode(False,node.getKey(0).atLeaf(),None,node.getKey(0)))
+                toPromoveKey.setRightSon(BTreeNode.BTreeNode(False,node.getKey(2).atLeaf(),None,node.getKey(2)))
+            
             node.deleteKey(0)
             node.deleteKey(1)
             if toPromoveKey.getOwnNode().getFather() == None:

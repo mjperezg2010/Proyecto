@@ -42,7 +42,7 @@ class Buffer:
         dataLine = fileObject.read()
         for j in range (0,len(dataLine)):
             _cont = 0
-            dataBlock = dataLine[cont*self.getRegSize():_cont*self.getRegSize()+self.getRegSize()]            
+            dataBlock = dataLine[_cont*self.getRegSize():_cont*self.getRegSize()+self.getRegSize()]            
             _cont += 1
             j += self.getRegSize()
             indexFlag = 0

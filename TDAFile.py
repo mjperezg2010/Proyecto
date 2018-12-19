@@ -244,7 +244,7 @@ class TDAFile:
             self.file.seek(toRemove)
             buffer.erase(self.file)
 
-    #def shrink(self):
+    def shrink(self):
 
 
     def getFreeSpace(self):

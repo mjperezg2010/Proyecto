@@ -161,7 +161,9 @@ class TDAFile:
             node.addKey(newKey)
             toPromoveKey = node.getKey(1)
             toPromoveKey.setLeftSon(BTreeNode.BTreeNode(False,node.getKey(0).atLeaf(),node,node.getKey(0)))
-            toPromoveKey.setRightSon(BTreeNode.BTreeNode(False,node.getKey(2).atLeaf(),node,node.getKey(2)))            
+            toPromoveKey.setRightSon(BTreeNode.BTreeNode(False,node.getKey(2).atLeaf(),node,node.getKey(2)))
+            node.deleteKey(0)
+            node.deleteKey(1)
             if toPromoveKey.getOwnNode().getFather() == None:
                 self.root = BTreeNode.BTreeNode(True,False,None,toPromoveKey)                                
             else:                

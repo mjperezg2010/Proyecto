@@ -23,7 +23,7 @@ class TDAFile:
         self.ALfileName = fileName[:-4]+"AVL.txt"
         self.INFfileName = fileName[:-4]+"INF.txt"
         self.availListFile = open(self.ALfileName,'w')
-        self.indexFile = open(self.INffileName,'w')        
+        self.indexFile = open(self.INFfileName,'w')
         self.indexFile.close()
         self.availListFile.close()
         self.auxiliaryStr = ""
